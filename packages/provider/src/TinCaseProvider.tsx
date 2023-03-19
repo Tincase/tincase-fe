@@ -2,7 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 
 import { TinCaseProviderProps } from "./types";
 
-import { GlobalStyles } from "./GlobalStyles";
+import { GlobalStyles } from "./GlobalStyles/GlobalStyles";
 
 export const TinCaseProvider = ({ children }: TinCaseProviderProps) => {
   return (
