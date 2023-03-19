@@ -4,6 +4,7 @@ import { elevation } from "./elevation";
 import { radius } from "./radius";
 import { size } from "./size";
 import { spacing } from "./spacing";
+import { zIndex } from "./z-index";
 
 export const aliasToken = {
   border,
@@ -12,4 +13,5 @@ export const aliasToken = {
   radius,
   size,
   spacing,
+  zIndex,
 };
