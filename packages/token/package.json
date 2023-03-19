@@ -5,5 +5,8 @@
   "packageManager": "yarn@3.5.0",
   "dependencies": {
     "@tincase/utils": "workspace:^"
+  },
+  "devDependencies": {
+    "tsconfig": "*"
   }
 }

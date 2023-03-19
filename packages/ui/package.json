@@ -1,8 +1,8 @@
 {
   "name": "@tincase/ui",
   "version": "0.0.0",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
@@ -29,5 +29,12 @@
     "storybook": "7.0.0-rc.1",
     "tsconfig": "*",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@tincase/provider": "workspace:^",
+    "@tincase/token": "workspace:^",
+    "babel-plugin-react-require": "^3.1.3"
   }
 }

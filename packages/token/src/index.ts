@@ -8,4 +8,5 @@ export const token = {
 
 export type Token = typeof token;
 
+export * from "./types";
 export * from "./utils";
