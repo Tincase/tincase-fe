@@ -12,6 +12,11 @@ export type Border = {
 export type BorderKey = keyof Border;
 
 // prettier-ignore
+export type Breakpoint = {
+  desktop:        SizeProperty;
+};
+
+// prettier-ignore
 export type Elevation = {
   level1:         string;
   level2:         string;
