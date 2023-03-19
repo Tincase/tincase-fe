@@ -10,6 +10,26 @@ export type Radius = {
 }
 
 // prettier-ignore
+export type SemanticSize = {
+  minWidth:       SizeProperty;
+  height:         SizeProperty;
+  paddingX:       SizeProperty;
+  radius:         SizeProperty;
+}
+
+// prettier-ignore
+export type Size = {
+  sm:             SemanticSize;
+  md:             SemanticSize;
+  lg:             SemanticSize;
+  min:            string;
+  max:            string;
+  full:           string;
+};
+
+export type SizeKey = 'sm' | 'md' | 'lg';
+
+// prettier-ignore
 export type Spacing = {
   2:              SizeProperty;
   4:              SizeProperty;
