@@ -11,7 +11,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "storybook:ui": "yarn workspace ui storybook"
+    "storybook:ui": "yarn workspace @tincase/ui storybook"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
