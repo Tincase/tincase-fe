@@ -5,3 +5,7 @@ export * from "./types";
 export const token = {
   ...aliasToken,
 };
+
+export type Token = typeof token;
+
+export * from "./utils";
