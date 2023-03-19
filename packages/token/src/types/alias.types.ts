@@ -82,6 +82,8 @@ export type Font = {
   letterSpacing:  LetterSpacing;
 }
 
+export type TypographyKey = keyof FontSize;
+
 // prettier-ignore
 export type Radius = {
   none:           SizeProperty;
