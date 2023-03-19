@@ -1,2 +1,4 @@
+export * from "./type-guards"; // Must import before importing other utils
+
 export * from "./object-utils";
-export * from "./type-guards";
+export * from "./string-utils";
