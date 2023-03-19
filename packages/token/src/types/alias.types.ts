@@ -1,6 +1,15 @@
 import { SizeProperty } from "./primitive.types";
 
 // prettier-ignore
+export type Radius = {
+  none:           SizeProperty;
+  sm:             SizeProperty;
+  md:             SizeProperty;
+  lg:             SizeProperty;
+  max:            SizeProperty;
+}
+
+// prettier-ignore
 export type Spacing = {
   2:              SizeProperty;
   4:              SizeProperty;
