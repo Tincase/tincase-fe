@@ -6,7 +6,7 @@ export default function Web() {
     <TinCaseProvider>
       <div>
         <h1>Web</h1>
-        <Button />
+        <Button>버튼</Button>
       </div>
     </TinCaseProvider>
   );

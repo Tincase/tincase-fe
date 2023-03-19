@@ -29,9 +29,13 @@ export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
   cursor:           pointer;
   appearance:       none;
   user-select:      none;
+  
+  &:hover {
+
+  }
 
   ${({ size }) =>     getCss({ size })}
 
   ${({ fill }) =>     fill && 'width: 100%;'}
-  ${({ variant }) =>  getButtonVaraintCss({ variant })}
+  ${({ variant }) =>  getButtonVaraintCss({ variant, color: "var(--tincase-color-primary)" })}
 `;

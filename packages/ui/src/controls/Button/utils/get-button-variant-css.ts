@@ -11,7 +11,7 @@ interface GetButtonVaraintCSSProps {
 // prettier-ignore
 export function getButtonVaraintCss({
   variant,
-  color = 'darkorchid',
+  color = '',
 }: GetButtonVaraintCSSProps) {
   switch (variant) {
     case 'outline':       return getOutlineButtonCss(color);
