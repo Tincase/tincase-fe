@@ -1,6 +1,15 @@
 import { SizeProperty } from "./primitive.types";
 
 // prettier-ignore
+export type Elevation = {
+  level1:         string;
+  level2:         string;
+  level3:         string;
+  level4:         string;
+  level5:         string;
+};
+
+// prettier-ignore
 export type Radius = {
   none:           SizeProperty;
   sm:             SizeProperty;
@@ -27,7 +36,7 @@ export type Size = {
   full:           string;
 };
 
-export type SizeKey = 'sm' | 'md' | 'lg';
+export type SizeKey = "sm" | "md" | "lg";
 
 // prettier-ignore
 export type Spacing = {
