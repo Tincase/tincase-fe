@@ -1,0 +1,11 @@
+{
+  "name": "@tincase/provider",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "packageManager": "yarn@3.5.0",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6"
+  }
+}

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tincase/provider": "*",
     "@tincase/ui": "*",
     "next": "^13.1.1",
     "react": "^18.2.0",
