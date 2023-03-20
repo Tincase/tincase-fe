@@ -31,8 +31,6 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@tincase/provider": "workspace:^",
     "@tincase/token": "workspace:^",
     "babel-plugin-react-require": "^3.1.3",

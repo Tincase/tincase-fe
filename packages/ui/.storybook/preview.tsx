@@ -1,13 +1,13 @@
-import type { Preview } from "@storybook/react";
-import React from "react";
-import { TinCaseProvider } from "@tincase/provider";
+import type { Preview } from '@storybook/react';
+import React from 'react';
+import { TinCaseProvider } from '@tincase/provider';
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: "light",
+      default: 'light',
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -17,9 +17,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      // <TinCaseProvider>
-      <Story />
-      // </TinCaseProvider>
+      <TinCaseProvider>
+        <Story />
+      </TinCaseProvider>
     ),
   ],
 };

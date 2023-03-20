@@ -1,15 +1,15 @@
-import styled from "@emotion/styled";
-import { token, getCss } from "@tincase/token";
+import styled from '@emotion/styled';
+import { getCss } from '@tincase/token';
 
-import { getButtonVaraintCss } from "./utils";
+import { getButtonVaraintCss } from './utils';
 
-import { ButtonOptions } from "./Button.types";
+import { ButtonOptions } from './Button.types';
 
 /* ----------------------------------------
  * Components
  * ----------------------------------------*/
 
-type PickedButtonOptions = "size" | "fill" | "variant";
+type PickedButtonOptions = 'size' | 'fill' | 'variant';
 
 // prettier-ignore
 export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
@@ -19,7 +19,7 @@ export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
   display:          inline-flex;
   justify-content:  center;
   align-items:      center;
-  gap:              ${token.spacing[8]};
+  gap:              ${({ theme }) => theme.spacing?.[8]};
 
   position:         relative;
 
@@ -34,8 +34,8 @@ export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
 
   }
 
-  ${({ size }) =>     getCss({ size })}
+  ${({ theme, size }) =>     getCss({ token: theme, size })}
 
   ${({ fill }) =>     fill && 'width: 100%;'}
-  ${({ variant }) =>  getButtonVaraintCss({ variant, color: "var(--tincase-color-primary)" })}
+  ${({ theme, variant }) =>  getButtonVaraintCss({ token: theme, variant, color: theme.color.primary })}
 `;

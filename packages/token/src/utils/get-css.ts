@@ -1,17 +1,22 @@
-import type { SemanticSize, SizeKey, BorderType, GetCssProps } from "../types";
-import { token } from "../index";
+import type {
+  SemanticSize,
+  SizeKey,
+  BorderType,
+  GetCssProps,
+  Token,
+} from '../types';
 
-import { isBorderStyleObject } from "./type-guard";
+import { isBorderStyleObject } from './type-guard';
 
-export function getCss({ size, border }: GetCssProps) {
+export function getCss({ token, size, border }: GetCssProps) {
   let styles = [];
 
   if (size) {
-    styles.push(getSizeCss(size));
-    styles.push(getTypographyCssBySize(size));
+    styles.push(getSizeCss(token, size));
+    styles.push(getTypographyCssBySize(token, size));
   }
 
-  if (border) styles.push(getBorderCss(border));
+  if (border) styles.push(getBorderCss(token, border));
 
   return styles.join();
 }
@@ -19,7 +24,7 @@ export function getCss({ size, border }: GetCssProps) {
 /* ----------------------------------------
  * Functions for each CSS
  * ----------------------------------------*/
-function getSizeCss(size: SizeKey) {
+function getSizeCss(token: Token, size: SizeKey) {
   return mapSemanticSizeObjectToCss(token.size[size]);
 }
 
@@ -38,7 +43,7 @@ function mapSemanticSizeObjectToCss({
   `;
 }
 
-function getTypographyCssBySize(size: SizeKey) {
+function getTypographyCssBySize(token: Token, size: SizeKey) {
   const fontFamily = token.font.fontFamily.body;
   const fontSize = token.font.fontSize[size];
   const fontWeight = token.font.fontWeight.regular;
@@ -53,7 +58,7 @@ function getTypographyCssBySize(size: SizeKey) {
 }
 
 // prettier-ignore
-function getBorderCss(border: BorderType) {
+function getBorderCss(token: Token, border: BorderType) {
   if (isBorderStyleObject(border))
     return `border: ${token.border[border.type]} ${border.color};`;
   else
