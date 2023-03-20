@@ -1,5 +1,5 @@
-import { BorderKey, SizeKey } from "./alias.types";
-import { ThemeColor } from "./theme.types";
+import { BorderKey, SizeKey } from './alias.types';
+import { ThemeColor } from './theme-color.types';
 
 // prettier-ignore
 export interface GetCssProps {

@@ -1,1 +1,1 @@
-export * from "./TinCaseProvider";
+export * from './TinCaseProvider';
