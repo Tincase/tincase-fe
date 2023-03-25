@@ -4,11 +4,12 @@ import type {
   BorderType,
   GetCssProps,
   Token,
+  TransitionProps,
 } from '../types';
 
 import { isBorderStyleObject } from './type-guard';
 
-export function getCss({ token, size, border }: GetCssProps) {
+export function getCss({ token, size, border, transition }: GetCssProps) {
   let styles = [];
 
   if (size) {
@@ -18,6 +19,10 @@ export function getCss({ token, size, border }: GetCssProps) {
 
   if (border) {
     styles.push(getBorderCss(token, border));
+  }
+
+  if (transition) {
+    styles.push(getTransition(token, transition));
   }
 
   return styles.join(' ');
@@ -63,4 +68,21 @@ function getBorderCss(token: Token, border: BorderType) {
     return `border: ${token.border[border.type]} ${border.color};`;
   else
     return `border: ${token.border[border]};`;
+}
+
+// prettier-ignore
+function getTransition(token: Token, transition: TransitionProps) {
+  const { property, duration, easing } = {
+    property:   token.transition.property[transition.property ?? 'common'],
+    duration:   token.transition.duration[transition.duration ?? 'normal'],
+    easing:     token.transition.easing[transition.easing ?? 'ease-in'],
+  };
+
+  console.log(property, duration, easing)
+
+  return `
+    transition-property:        ${property};
+    transition-duration:        ${duration};
+    transition-timing-function: ${easing};
+  `
 }

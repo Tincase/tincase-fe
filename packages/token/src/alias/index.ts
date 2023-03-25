@@ -7,6 +7,7 @@ import { font } from './font';
 import { radius } from './radius';
 import { size } from './size';
 import { spacing } from './spacing';
+import { transition } from './transition';
 import { zIndex } from './z-index';
 
 export const aliasToken: AliasToken = {
@@ -17,5 +18,6 @@ export const aliasToken: AliasToken = {
   radius,
   size,
   spacing,
+  transition,
   zIndex,
 };
