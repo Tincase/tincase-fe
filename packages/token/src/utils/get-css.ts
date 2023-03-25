@@ -16,9 +16,11 @@ export function getCss({ token, size, border }: GetCssProps) {
     styles.push(getTypographyCssBySize(token, size));
   }
 
-  if (border) styles.push(getBorderCss(token, border));
+  if (border) {
+    styles.push(getBorderCss(token, border));
+  }
 
-  return styles.join();
+  return styles.join(' ');
 }
 
 /* ----------------------------------------
@@ -46,13 +48,11 @@ function mapSemanticSizeObjectToCss({
 function getTypographyCssBySize(token: Token, size: SizeKey) {
   const fontFamily = token.font.fontFamily.body;
   const fontSize = token.font.fontSize[size];
-  const fontWeight = token.font.fontWeight.regular;
   const lineHeight = token.font.lineHeight.default;
 
   return `
     font-family: ${fontFamily};
     font-size: ${fontSize};
-    font-weight: ${fontWeight};
     line-height: ${lineHeight};
   `;
 }
