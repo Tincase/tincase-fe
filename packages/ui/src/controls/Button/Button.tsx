@@ -1,13 +1,13 @@
-import { ButtonIcon } from "./ButtonIcon";
+import { ButtonIcon } from './ButtonIcon';
 
-import { ButtonProps } from "./Button.types";
-import * as S from "./Button.styles";
+import { ButtonProps } from './Button.types';
+import { S } from './styles';
 
 export const Button = ({
   children,
   icon,
-  iconPosition = "start",
-  size = "md",
+  iconPosition = 'start',
+  size = 'md',
   loading,
   ...rest
 }: ButtonProps) => {
@@ -25,14 +25,14 @@ const ButtonContent = ({
   icon,
   iconPosition,
   loading,
-}: Pick<ButtonProps, "children" | "icon" | "iconPosition" | "loading">) => {
+}: Pick<ButtonProps, 'children' | 'icon' | 'iconPosition' | 'loading'>) => {
   return loading ? (
     <>Loading</>
   ) : (
     <>
-      {icon && iconPosition === "start" && <ButtonIcon>{icon}</ButtonIcon>}
+      {icon && iconPosition === 'start' && <ButtonIcon>{icon}</ButtonIcon>}
       {children}
-      {icon && iconPosition === "end" && { icon }}
+      {icon && iconPosition === 'end' && { icon }}
     </>
   );
 };

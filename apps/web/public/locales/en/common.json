@@ -1,0 +1,10 @@
+{
+  "navBar": {
+    "login": "Login",
+    "join": "Join",
+    "home": "Home",
+    "deck": "Deck",
+    "card-maker": "Card Maker",
+    "my-page": "My Page"
+  }
+}

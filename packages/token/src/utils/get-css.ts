@@ -4,11 +4,12 @@ import type {
   BorderType,
   GetCssProps,
   Token,
+  TransitionProps,
 } from '../types';
 
 import { isBorderStyleObject } from './type-guard';
 
-export function getCss({ token, size, border }: GetCssProps) {
+export function getCss({ token, size, border, transition }: GetCssProps) {
   let styles = [];
 
   if (size) {
@@ -16,9 +17,15 @@ export function getCss({ token, size, border }: GetCssProps) {
     styles.push(getTypographyCssBySize(token, size));
   }
 
-  if (border) styles.push(getBorderCss(token, border));
+  if (border) {
+    styles.push(getBorderCss(token, border));
+  }
 
-  return styles.join();
+  if (transition) {
+    styles.push(getTransition(token, transition));
+  }
+
+  return styles.join(' ');
 }
 
 /* ----------------------------------------
@@ -46,13 +53,11 @@ function mapSemanticSizeObjectToCss({
 function getTypographyCssBySize(token: Token, size: SizeKey) {
   const fontFamily = token.font.fontFamily.body;
   const fontSize = token.font.fontSize[size];
-  const fontWeight = token.font.fontWeight.regular;
   const lineHeight = token.font.lineHeight.default;
 
   return `
     font-family: ${fontFamily};
     font-size: ${fontSize};
-    font-weight: ${fontWeight};
     line-height: ${lineHeight};
   `;
 }
@@ -63,4 +68,21 @@ function getBorderCss(token: Token, border: BorderType) {
     return `border: ${token.border[border.type]} ${border.color};`;
   else
     return `border: ${token.border[border]};`;
+}
+
+// prettier-ignore
+function getTransition(token: Token, transition: TransitionProps) {
+  const { property, duration, easing } = {
+    property:   token.transition.property[transition.property ?? 'common'],
+    duration:   token.transition.duration[transition.duration ?? 'normal'],
+    easing:     token.transition.easing[transition.easing ?? 'ease-in'],
+  };
+
+  console.log(property, duration, easing)
+
+  return `
+    transition-property:        ${property};
+    transition-duration:        ${duration};
+    transition-timing-function: ${easing};
+  `
 }

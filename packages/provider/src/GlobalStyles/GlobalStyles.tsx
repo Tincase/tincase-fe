@@ -1,12 +1,5 @@
-import { Global } from "@emotion/react";
-import { getCssVariables, token } from "@tincase/token";
+import { Global } from '@emotion/react';
 
-import { GlobalStylesProps } from "./GlobalStyles.types";
-
-export const GlobalStyles = ({ root = ":host, :root" }: GlobalStylesProps) => {
-  const selector = [root, "[data-theme]"].join(",");
-
-  const cssVariables = getCssVariables({ token, prefix: "tincase" });
-
-  return <Global styles={{ [selector]: cssVariables }} />;
+export const GlobalStyles = () => {
+  return <Global styles={(theme) => theme.style.global} />;
 };

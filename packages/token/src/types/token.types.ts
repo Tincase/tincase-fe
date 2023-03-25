@@ -6,8 +6,10 @@ import {
   Radius,
   Size,
   Spacing,
+  Transition,
   ZIndex,
-} from './alias.types';
+} from './alias';
+import { Style } from './style.types';
 import { Color } from './theme-color.types';
 
 // prettier-ignore
@@ -19,9 +21,12 @@ export type Token = {
   radius:       Radius;
   size:         Size;
   spacing:      Spacing;
+  transition:   Transition;
   zIndex:       ZIndex;
 
   color:        Color;
+
+  style:       Style
 };
 
-export type AliasToken = Omit<Token, 'color'>;
+export type AliasToken = Omit<Token, 'color' | 'style'>;

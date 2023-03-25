@@ -4,8 +4,8 @@
  * Licensed under the MIT License.
  */
 
-import { primitive } from "../primitive";
-import { Font } from "../types";
+import { primitive } from '../primitive';
+import { Font } from '../types';
 
 // prettier-ignore
 export const font: Font = {
@@ -28,7 +28,6 @@ export const font: Font = {
     light:    300,
     regular:  400,
     medium:   500,
-    semibold: 600,
     bold:     700,
   },
 

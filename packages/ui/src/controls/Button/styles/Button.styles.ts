@@ -1,20 +1,23 @@
 import styled from '@emotion/styled';
 import { getCss } from '@tincase/token';
 
-import { getButtonVaraintCss } from './utils';
+import { ButtonOptions } from '../Button.types';
 
-import { ButtonOptions } from './Button.types';
+import { getButtonVaraintCss } from './get-button-variant-css';
 
 /* ----------------------------------------
  * Components
  * ----------------------------------------*/
 
-type PickedButtonOptions = 'size' | 'fill' | 'variant';
+type PickedButtonOptions = 'size' | 'fill' | 'variant' | 'color';
 
 // prettier-ignore
 export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
   border:           unset;
   outline:          unset;
+  
+  ${({ theme, size }) =>
+                    getCss({ token: theme, size, transition: true })}
 
   display:          inline-flex;
   justify-content:  center;
@@ -25,17 +28,14 @@ export const Button = styled.button<Pick<ButtonOptions, PickedButtonOptions>>`
 
   white-space:      nowrap;
   vertical-align:   middle;
+  font-weight:      ${({ theme }) => theme.font.fontWeight.medium};
 
   cursor:           pointer;
   appearance:       none;
   user-select:      none;
-  
-  &:hover {
 
-  }
+  ${({ fill }) =>   fill && 'width: 100%;'}
 
-  ${({ theme, size }) =>     getCss({ token: theme, size })}
-
-  ${({ fill }) =>     fill && 'width: 100%;'}
-  ${({ theme, variant }) =>  getButtonVaraintCss({ token: theme, variant, color: theme.color.primary })}
+  ${({ theme, variant, color }) =>
+                    getButtonVaraintCss({ token: theme, variant, color })}
 `;
