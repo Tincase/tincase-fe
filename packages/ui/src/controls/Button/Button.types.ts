@@ -2,15 +2,10 @@
  * Button Options
  * ----------------------------------------*/
 
+import { ColorVariant } from '@tincase/token';
+
 export type ButtonSize = 'sm' | 'md' | 'lg';
-export type ButtonColor =
-  | 'primary'
-  | 'secondary'
-  | 'accent'
-  | 'success'
-  | 'error'
-  | 'warning'
-  | 'info';
+export type ButtonColor = keyof ColorVariant;
 export type ButtonVariant =
   | 'solid'
   | 'outline'
