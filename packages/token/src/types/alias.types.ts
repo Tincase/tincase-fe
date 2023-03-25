@@ -1,4 +1,4 @@
-import { SizeProperty } from "./primitive.types";
+import { SizeProperty } from './primitive.types';
 
 // prettier-ignore
 export type Border = {
@@ -51,7 +51,6 @@ export type FontWeight = {
   light:          number;
   regular:        number;
   medium:         number;
-  semibold:       number;
   bold:           number;
 };
 
@@ -111,7 +110,7 @@ export type Size = {
   full:           string;
 };
 
-export type SizeKey = "sm" | "md" | "lg";
+export type SizeKey = 'sm' | 'md' | 'lg';
 
 // prettier-ignore
 export type Spacing = {
