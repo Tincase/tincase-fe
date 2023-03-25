@@ -3,6 +3,9 @@ import styled from '@emotion/styled';
 const token = {
   paddingHorizontal: 40,
   gap: 16,
+  sideSection: {
+    width: 200,
+  },
 } as const;
 
 /* ----------------------------------------
@@ -21,11 +24,11 @@ export const Nav = styled.nav`
   gap:        ${({ theme }) => theme.spacing[token.gap]};
 
   & > section {
-    display: flex;
-    align-items: center;
+    display:        flex;
+    align-items:    center;
 
-    &:not(.nav-menu) {
-      width: ${({ theme }) => theme.size[200]};
+    &:not(:nth-child(2)) {
+      width:  ${({ theme }) => theme.size[token.sideSection.width]};
     }
   }
 `;
@@ -44,12 +47,13 @@ export const RightMenuSection = styled.section`
  * Styled-Components
  * ----------------------------------------*/
 
+// prettier-ignore
 export const NavMenu = styled.ul`
-  all: unset;
+  all:      unset;
 
-  display: flex;
+  display:  flex;
   justify-content: center;
-  gap: ${({ theme }) => theme.spacing[8]};
+  gap:      ${({ theme }) => theme.spacing[8]};
 `;
 export const NavItem = styled.li`
   all: unset;
