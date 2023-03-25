@@ -1,16 +1,12 @@
-import { NavBar, Button } from '@tincase/ui';
-import { TinCaseProvider } from '@tincase/provider';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Web() {
-  return (
-    <TinCaseProvider>
-      <header>
-        <NavBar />
-      </header>
-      <div>
-        <h1>Web</h1>
-        <Button>버튼</Button>
-      </div>
-    </TinCaseProvider>
-  );
+  return <div></div>;
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'ko', ['common'])),
+  },
+});
