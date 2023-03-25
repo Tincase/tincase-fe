@@ -6,10 +6,6 @@ import { ButtonOptions } from '../Button.types';
 import { getButtonVaraintCss } from './get-button-variant-css';
 
 /* ----------------------------------------
- * Tokens
- * ----------------------------------------*/
-
-/* ----------------------------------------
  * Components
  * ----------------------------------------*/
 
