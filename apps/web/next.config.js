@@ -1,4 +1,7 @@
+const { i18n } = require('./next-i18next.config');
+
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["@tincase/ui"],
+  transpilePackages: ['@tincase/ui'],
+  i18n,
 };
