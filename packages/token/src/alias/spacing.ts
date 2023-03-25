@@ -4,8 +4,8 @@
  * Licensed under the MIT License.
  */
 
-import { primitive } from "../primitive";
-import { Spacing } from "../types";
+import { primitive } from '../primitive';
+import { Spacing } from '../types';
 
 // prettier-ignore
 export const spacing: Spacing = {
@@ -37,6 +37,7 @@ export const spacing: Spacing = {
   128:  primitive.size[128],
   144:  primitive.size[144],
   160:  primitive.size[160],
+  200:  primitive.size[200],
   240:  primitive.size[240],
   320:  primitive.size[320],
   400:  primitive.size[400],

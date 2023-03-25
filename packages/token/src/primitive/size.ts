@@ -38,6 +38,7 @@ export const size = {
   128:      "8rem",
   144:      "9rem",
   160:     "10rem",
+  200:     "12.5rem",
   240:     "15rem",
   320:     "20rem",
   400:     "25rem",

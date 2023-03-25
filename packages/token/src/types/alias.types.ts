@@ -101,7 +101,7 @@ export type SemanticSize = {
 }
 
 // prettier-ignore
-export type Size = {
+export type Size = Spacing & {
   sm:             SemanticSize;
   md:             SemanticSize;
   lg:             SemanticSize;
@@ -142,6 +142,7 @@ export type Spacing = {
   128:            SizeProperty;
   144:            SizeProperty;
   160:            SizeProperty;
+  200:            SizeProperty;
   240:            SizeProperty;
   320:            SizeProperty;
   400:            SizeProperty;
