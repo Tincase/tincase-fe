@@ -3592,6 +3592,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tincase/token@workspace:packages/token"
   dependencies:
+    "@emotion/react": ^11.10.6
     "@tincase/utils": "workspace:^"
     tsconfig: "*"
   languageName: unknown

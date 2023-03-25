@@ -8,6 +8,7 @@ import {
   Spacing,
   ZIndex,
 } from './alias.types';
+import { Style } from './style.types';
 import { Color } from './theme-color.types';
 
 // prettier-ignore
@@ -22,6 +23,8 @@ export type Token = {
   zIndex:       ZIndex;
 
   color:        Color;
+
+  style:       Style
 };
 
 export type AliasToken = Omit<Token, 'color'>;
