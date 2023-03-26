@@ -26,8 +26,8 @@ function getGridHorizontalAlign(horizontalAlign: HorizontalAlign = 'center') {
   let align: string = horizontalAlign;
 
   switch (horizontalAlign) {
-    case 'left':  align = 'start';
-    case 'right': align = 'end';
+    case 'left':  align = 'start';  break;
+    case 'right': align = 'end';    break;
   }
 
   return `justify-items: ${align};`;
@@ -38,8 +38,8 @@ function getGridVerticalAlign(verticalAlign: VerticalAlign = 'center') {
   let align: string = verticalAlign;
 
   switch (verticalAlign) {
-    case 'top':     align = 'start';
-    case 'bottom':  align = 'end';
+    case 'top':     align = 'start';  break;
+    case 'bottom':  align = 'end';    break;
   }
 
   return `align-items: ${align};`;
