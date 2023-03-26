@@ -1,8 +1,8 @@
 import { HorizontalAlign } from '../types';
 
 // prettier-ignore
-export function getHorizontalAlign(horizontalAlign: HorizontalAlign = 'left'): string {
-  let align: string = horizontalAlign;
+export function getHorizontalAlign(horizontalAlign?: HorizontalAlign): string {
+  let align = horizontalAlign ?? '';
 
   switch (horizontalAlign) {
     case 'left':    align = 'start';  break;
