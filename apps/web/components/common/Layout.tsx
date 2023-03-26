@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@tincase/provider';
-import { Token } from '@tincase/token';
+import { Stack } from '@tincase/ui';
 
 import { NavBar } from './NavBar';
 
@@ -12,16 +12,29 @@ export const Layout = ({ children }: LayoutProps) => {
   const theme = useTheme();
 
   return (
-    <Wrapper maxWidth={theme.breakpoint.desktop}>
+    <Stack
+      direction="column"
+      style={{
+        minHeight: '100%',
+        flex: 1,
+        margin: 'auto',
+        maxWidth: theme.breakpoint.desktop,
+      }}
+    >
       <header>
         <NavBar />
       </header>
-      <main>{children}</main>
-    </Wrapper>
+      <Main>{children}</Main>
+    </Stack>
   );
 };
 
-const Wrapper = styled.div<{ maxWidth: Token['breakpoint']['desktop'] }>`
-  width: ${({ maxWidth }) => maxWidth};
-  margin: auto;
+/* Styled-Components */
+
+const Main = styled.main`
+  height: 100%;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
