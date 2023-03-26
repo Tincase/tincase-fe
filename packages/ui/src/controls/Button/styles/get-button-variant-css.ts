@@ -1,4 +1,4 @@
-import type { ThemeColor, Token } from '@tincase/token';
+import type { Token } from '@tincase/token';
 
 import { css } from '@emotion/react';
 import { getCss } from '@tincase/token';

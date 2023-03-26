@@ -78,8 +78,6 @@ function getTransition(token: Token, transition: TransitionProps) {
     easing:     token.transition.easing[transition.easing ?? 'ease-in'],
   };
 
-  console.log(property, duration, easing)
-
   return `
     transition-property:        ${property};
     transition-duration:        ${duration};

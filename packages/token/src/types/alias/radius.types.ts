@@ -6,5 +6,6 @@ export type Radius = {
   sm:             SizeProperty;
   md:             SizeProperty;
   lg:             SizeProperty;
+  xl:             SizeProperty;
   max:            SizeProperty;
 }
