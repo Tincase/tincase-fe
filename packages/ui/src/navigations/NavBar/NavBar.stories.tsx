@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '../../controls';
+import { Center } from '../../layouts';
 
 import { NavBar } from './NavBar';
 
@@ -18,7 +19,7 @@ type Story = StoryObj<typeof NavBar>;
 
 export const Variants: Story = {
   render: (args) => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Center>
       <NavBar
         {...args}
         logo={<a href="/">Logo</a>}
@@ -43,6 +44,6 @@ export const Variants: Story = {
           </>
         }
       />
-    </div>
+    </Center>
   ),
 };
