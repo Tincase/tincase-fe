@@ -1,11 +1,18 @@
-import { TinCaseProvider } from '@tincase/provider';
+import { css, TinCaseProvider } from '@tincase/provider';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 
 import { Layout } from '../components';
 
+/* globalStyles: Define custom global styles here */
+const globalStyles = css`
+  #__next {
+    height: 100%;
+  }
+`;
+
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <TinCaseProvider>
+  <TinCaseProvider global={globalStyles}>
     <Layout>
       <Component {...pageProps} />
     </Layout>
@@ -13,4 +20,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
 );
 
 export default appWithTranslation(MyApp);
-// appWithTranslation : i18nextProvider를 제공하는 HOC입니다.
+/* appWithTranslation: This HOC provides the i18nextProvider */
