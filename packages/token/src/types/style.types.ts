@@ -1,14 +1,11 @@
-import { GlobalProps } from '@emotion/react';
+import type { GlobalProps, SerializedStyles } from '@emotion/react';
 
-import { Token } from './token.types';
+import type { Token } from './token.types';
 
 export type GlobalStyle = GlobalProps['styles'] & {};
 
-export type Style = {
-  global(theme: Token): GlobalStyle;
-};
+export type CustomGlobalStyle = string | SerializedStyles;
 
-interface A {
-  prop1: string;
-  prop2: number;
-}
+export type Style = {
+  global(customStyle?: CustomGlobalStyle): (theme: Token) => GlobalStyle;
+};

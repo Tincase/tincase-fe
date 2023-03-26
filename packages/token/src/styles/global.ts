@@ -1,20 +1,31 @@
 import { css } from '@emotion/react';
-import { GlobalStyle, Token } from '../types';
 
-export const global = (theme: Token): GlobalStyle => css`
-  body {
-    margin: 0;
-  }
+import { CustomGlobalStyle, GlobalStyle, Token } from '../types';
 
-  a {
-    text-decoration: none;
+export const global =
+  (customGlobalStyle?: CustomGlobalStyle) =>
+  (theme: Token): GlobalStyle =>
+    css`
+      html,
+      body {
+        height: 100%;
+      }
 
-    &,
-    &:active,
-    &:focus,
-    &:hover,
-    &:visited {
-      color: ${theme.color.font.default};
-    }
-  }
-`;
+      body {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+
+        &,
+        &:active,
+        &:focus,
+        &:hover,
+        &:visited {
+          color: ${theme.color.font.default};
+        }
+      }
+
+      ${customGlobalStyle}
+    `;
