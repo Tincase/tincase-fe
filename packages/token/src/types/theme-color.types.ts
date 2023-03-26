@@ -3,7 +3,7 @@ export type ThemeColor = string;
 // prettier-ignore
 export type ColorVariant = {
   primary:    ThemeColor;
-  secondary:  ThemeColor;
+  // secondary:  ThemeColor;
 };
 
 // prettier-ignore
